@@ -28,7 +28,7 @@
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">
                             <div class="nav__icon-container">
-                                <i class='bx bx-home'></i> <!-- Home Icon -->
+                                 Home 
                             </div>
                             <!--Home-->
                         </a>
@@ -36,7 +36,7 @@
                     <li class="nav__item">
                         <a href="#search" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-search"></i>
+                                Search
                             </div>
                             <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
                             <script>
@@ -54,7 +54,7 @@
                     <li class="nav__item">
                         <a href="#events" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-calendar-event"></i>
+                                Events
                             </div>
                             <!--Events-->
                         </a>
@@ -62,7 +62,7 @@
                     <li class="nav__item">
                         <a href="#venues" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-buildings"></i>
+                                Venues
                             </div>
                             <!--Venues-->
                         </a>
@@ -70,7 +70,7 @@
                     <li class="nav__item">
                         <a href="#profile" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-user"></i>
+                                Profile
                             </div>
                             <!--My Profile-->
                         </a>
@@ -78,7 +78,7 @@
                     <li class="nav__item">
                         <a href="#create-event" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-plus"></i>
+                                Event
                             </div>
                             <!--Create Event-->
                         </a>
@@ -86,7 +86,7 @@
                     <li class="nav__item">
                         <a href="#community" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-chat"></i>
+                                Community
                             </div>
                             <!--Community-->
                         </a>
@@ -94,7 +94,7 @@
                     <li class="nav__item">
                         <a href="#settings" class="nav__link">
                             <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-cog"></i>
+                                Settings
                             </div>
                             <!--Settings-->
                         </a>
@@ -236,6 +236,36 @@
             themeButton.classList.add('bx-sun');
         }
     });
+</script>
+<script>
+    // JavaScript to toggle the overlay
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.querySelector('.overlay');
+    const body = document.querySelector('body');
+  
+    // Function to show the overlay
+    function showOverlay() {
+      overlay.classList.remove('overlay-hidden');
+      body.style.overflow = 'hidden'; // Hide scrollbars
+    }
+  
+    // Function to hide the overlay
+    function hideOverlay() {
+      overlay.classList.add('overlay-hidden');
+      body.style.overflow = ''; // Show scrollbars
+    }
+  
+    // Example: Toggle overlay when clicking a button
+    const toggleButton = document.querySelector('#toggle-overlay-button');
+    toggleButton.addEventListener('click', function() {
+      if (overlay.classList.contains('overlay-hidden')) {
+        showOverlay();
+      } else {
+        hideOverlay();
+      }
+    });
+  });
+  
 </script>
 
 <!--=============== SCROLLREVEAL ===============-->

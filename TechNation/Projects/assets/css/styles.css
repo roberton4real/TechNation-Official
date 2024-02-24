@@ -132,7 +132,7 @@ img {
   --title-color: hsl(var(--first-hue), var(--sat), var(--lig)); /* Black */
   --text-color: #000; /* Black */
   --text-color-light: hsl(0, 0%, 9%); /* Adjusted darker color */
-  --body-color: hsl(200, 23%, 95%);
+  --body-color: hsl(200, 11%, 78%);
   --container-color: #fff; /* White */
 }
 
@@ -150,7 +150,7 @@ img {
 /*========== Variables Light theme ==========*/
 body.light-theme {
   --title-color: hsl(var(--second-hue), 15%, 15%);
-  --text-color: hsl(var(--second-hue), 8%, 35%);
+  --text-color: #4f2727;
   --body-color: hsl(var(--second-hue), 100%, 99%);
   --container-color: #fff;
 }
@@ -164,12 +164,14 @@ body.light-theme {
 }
 
 .light-theme .nav__menu {
-  background-color: hsla(var(--second-hue), 32%, 90%, 0.8);
+  background-color: transparent; /* Remove the gray background */
   /* Smaller size and padding for the menu */
   width: 70%; /* Default width for medium-sized screens */
   max-width: 250px; /* Maximum width */
   padding: 0.5rem 1rem; /* Padding */
+  
 }
+
 
 .light-theme .section__subtitle {
   color: var(--text-color);
@@ -302,20 +304,20 @@ body.light-theme {
   transition: 0.4s;
 }
 
+/* Adjust the positioning and alignment of the menus */
 .nav__menu {
   position: fixed;
-  bottom: 1rem;
+  top: 1rem; /* Adjust the distance from the top */
   left: 50%;
   transform: translateX(-50%);
-  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  background-color: transparent; /* Remove the gray background */
   width: 80%;
   max-width: 480px;
   border-radius: 4rem;
   padding: 0.5rem 1.5rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
   transition: 0.2s;
 }
-
 
 /* Adjustments for smaller screens */
 @media screen and (max-width: 768px) {
@@ -380,13 +382,30 @@ body.light-theme {
   }
 }
 
-/* Align moon button to the top-right corner */
+/* Position and align the moon, sun, and footsteps icons */
 #theme-button {
-  position: fixed; /* Use fixed position to keep it visible while scrolling */
-  top: 10px;
-  right: 10px;
+  position: fixed;
+  top: 2rem; /* Adjust the distance from the top */
+  right: 10px; /* Adjust the distance from the right */
   font-size: 24px;
   color: var(--first-color);
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
+}
+/* Add this code at the end of your CSS */
+
+/* Gray overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 50%, 0.5); /* Adjust the HSL values and opacity as needed */
+  z-index: 999; /* Ensure it's below the navbar but above the content */
+}
+
+/* Hide the overlay by default */
+.overlay-hidden {
+  display: none;
 }
