@@ -100,7 +100,7 @@ button {
 }
 
 img {
-  max-width: 100%;
+  max-width: 25%;
   height: auto;
 }
 
@@ -116,7 +116,7 @@ img {
   --title-color: hsl(var(--first-hue), 66%, 75%);
   --text-color: hsl(var(--second-hue), 47%, 91%);
   --text-color-light: hsl(29, 58%, 9%);
-  --body-color: hsl(199, 52%, 46%);
+  --body-color: #D9E2D5;
   --container-color: hsl(var(--second-hue), 32%, 12%);
 }
 
@@ -285,9 +285,13 @@ body.light-theme {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--body-color);
-  z-index: var(--z-fixed);
-  transition: 0.2s;
+  padding: 10px 50px;
+  background: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
 .nav {
@@ -300,6 +304,9 @@ body.light-theme {
   color: var(--first-color);
   font-weight: var(--font-medium);
   transition: 0.4s;
+  max-height: 150px;
+  max-width: auto;
+  margin-right: 10px;
 }
 
 .nav__menu {
@@ -389,17 +396,4 @@ body.light-theme {
   color: var(--first-color);
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 100px;
-  background: transparent;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
 }
