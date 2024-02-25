@@ -43,7 +43,7 @@
 }
 
 /* Responsive typography */
-@media screen and (min-width: 968px) {
+Media screen and (min-width: 968px) {
   :root {
     --biggest-font-size: 2.5rem;
     --h1-font-size: 2.25rem;
@@ -222,21 +222,21 @@ body.light-theme {
 }
 
 /* For small devices */
-@media screen and (max-width: 575.98px) {
+Media screen and (max-width: 575.98px) {
   .nav__icon {
     font-size: 20px; /* Adjust the size for smaller screens */
   }
 }
 
 /* For medium devices */
-@media screen and (min-width: 576px) {
+Media screen and (min-width: 576px) {
   .nav__icon {
     font-size: 24px; /* Default size for medium devices */
   }
 }
 
 /* For large devices */
-@media screen and (min-width: 992px) {
+Media screen and (min-width: 992px) {
   .nav__icon {
     font-size: 28px; /* Adjust the size for larger screens */
   }
@@ -325,7 +325,7 @@ body.light-theme {
 
 
 /* Adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+Media screen and (max-width: 768px) {
   .nav__menu {
     width: 90%; /* Adjusted width for smaller screens */
     max-width: 480px; /* Adjusted maximum width */
@@ -334,7 +334,7 @@ body.light-theme {
 }
 
 /* Adjustments for larger screens */
-@media screen and (min-width: 1200px) {
+Media screen and (min-width: 1200px) {
   .nav__menu {
     width: 70%; /* Adjusted width for larger screens */
     max-width: 40%; /* Adjusted maximum width */
@@ -377,7 +377,7 @@ body.light-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+Media screen and (max-width: 320px) {
   .nav__menu {
     padding: 1rem 1.5rem;
   }
@@ -396,6 +396,94 @@ body.light-theme {
   color: var(--first-color);
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
+}
+/*=============== VENUES ===============*/
+.venues__container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venues__filters {
+  display: flex;
+  justify-content: center;
+}
+
+.venues__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem; /* Add margin between venue cards */
+}
+
+.venues__img {
+  border-radius: 1rem;
+  margin-bottom: .75rem;
+}
+
+.venues__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+
+.venues__description {
+  color: var(--title-color);
+}
+
+.venues__button {
+  width: max-content;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.venues__button.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__button:hover .venues__icon {
+  transform: translateX(.25rem);
+}
+
+.venues__icon {
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.venues__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+}
+
+.venues__item.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__item:hover {
+  background-color: var(--hover-color);
+}
+/* Active link */
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(var(--first-hue), var(--sat), var(--lig), 1), 
+              hsla(var(--first-hue), var(--sat), var(--lig), .2)
+            );
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
+  color: var(--title-color);
+}
+/*Active modal*/
+.active-modal {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Slider for photos */

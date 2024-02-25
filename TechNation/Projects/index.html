@@ -174,14 +174,76 @@
         </div>
     </section>
 
-    <!--=============== VENUES ===============-->
-    <section class="section venues" id="venues" style="padding: 5vw;">
-        <span class="section__subtitle">Venues</span>
-        <h2 class="section__title">Explore Venues</h2>
-        <div class="venues__container container grid" style="padding: 5vw;">
-            <!-- Venue exploration and listing goes here -->
+<!--=============== VENUES ===============-->
+<section class="section venues" id="venues" style="padding: 5vw;">
+    <span class="section__subtitle">Venues</span>
+    <h2 class="section__title">Explore Venues</h2>
+    <div class="venues__container container grid" style="padding: 5vw;">
+
+        <div class="venues__filters">
+            <span class="venues__item active-venue" data-filter='all' onclick="filterCards('all', this)">All</span>
+            <span class="venues__item" data-filter='.web' onclick="filterCards('web', this)">Live</span>
+            <span class="venues__item" data-filter='.movil' onclick="filterCards('movil', this)">Art</span>
+            <span class="venues__item" data-filter='.design' onclick="filterCards('design', this)">Outdoor</span>
         </div>
-    </section>
+
+        <!-- Venue exploration and listing goes here -->
+        <div class="venues__card web"> <!-- Added class 'web' to identify this card -->
+            <img src="path/to/live_music_concert.jpg" alt="Live Music Concert" class="venue__img">
+            <h3 class="venue__title">Live Music Concert</h3>
+            <p class="venue__description">Join us for an unforgettable night of live music featuring renowned artists from around the world.</p>
+            <a href="#" class="venue__button">Get Tickets</a>
+        </div>
+        <div class="venues__card movil"> <!-- Added class 'movil' to identify this card -->
+            <img src="path/to/outdoor_festival.jpg" alt="Outdoor Festival" class="venue__img">
+            <h3 class="venue__title">Outdoor Festival</h3>
+            <p class="venue__description">Experience the excitement of our outdoor festival with food, drinks, and live entertainment.</p>
+            <a href="#" class="venue__button">Learn More</a>
+        </div>
+        <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
+            <img src="path/to/art_exhibition.jpg" alt="Art Exhibition" class="venue__img">
+            <h3 class="venue__title">Art Exhibition</h3>
+            <p class="venue__description">Explore a diverse collection of artworks by talented local artists at our upcoming exhibition.</p>
+            <a href="#" class="venue__button">View Artists</a>
+        </div>
+        <!-- Add more venue cards as needed -->
+    </div>
+</section>
+
+<script>
+    function filterCards(category, button) {
+        var cards = document.querySelectorAll('.venues__card');
+        cards.forEach(function(card) {
+            if (category === 'all') {
+                card.style.display = 'block';
+            } else {
+                if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+
+        // Update active class for buttons
+        var filterItems = document.querySelectorAll('.venues__item');
+        filterItems.forEach(function(item) {
+            if (item.getAttribute('data-filter') === category) {
+                item.classList.add('active-venue');
+            } else {
+                item.classList.remove('active-venue');
+            }
+        });
+
+        // Toggle active class for the clicked button only
+        var buttons = document.querySelectorAll('.venues__item');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active-venue');
+        });
+        button.classList.add('active-venue');
+    }
+</script>
+
 
     <!--=============== MY PROFILE ===============-->
     <section class="section profile" id="profile" style="padding: 5vw;">
