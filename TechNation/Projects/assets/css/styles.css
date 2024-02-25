@@ -57,7 +57,6 @@ Media screen and (min-width: 968px) {
 
 /*=============== BASE ===============*/
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -537,6 +536,7 @@ Media screen and (max-width: 320px) {
   border-radius: 5px; /* Rounded corners */
   text-decoration: none; /* Remove underline */
   transition: background-color 0.3s ease; /* Smooth transition for button */
+  text-align: center;
 }
 
 /* Hover effect for button */
