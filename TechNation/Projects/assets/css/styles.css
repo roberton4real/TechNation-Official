@@ -587,6 +587,11 @@ Media screen and (max-width: 320px) {
   visibility: visible;
 }
 
+/* Hide the header content */
+.header .logo {
+  display: none;
+}
+
 /* Slider for photos */
 
 #slider {
@@ -663,3 +668,4 @@ Media screen and (max-width: 320px) {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
