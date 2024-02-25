@@ -446,18 +446,31 @@ Media screen and (max-width: 320px) {
   background-color: rgba(0, 0, 0, 0.5); /* Dark background with 50% opacity */
   color: white; /* White text for better visibility */
 }
-
-.venues__card .web {
-  flex: 1; 
-  margin-top: 20px;
+/* make softer edges on the photo as well as make cards flexible towards the picture*/
+/* Styling for individual venue cards */
+.venues__card {
+  background-color: #333; /* Dark background */
+  color: white; /* White text for better visibility */
+  padding: 20px; /* Padding for content */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Add space between cards */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange content vertically */
+  align-items: center; /* Center content horizontally */
+  width: 90%; /* Set card width to 90% of its container */
+  max-width: 400px; /* Set maximum width for larger screens */
 }
-.venues__card .design {
 
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .venues__card {
+    width: 45%; /* Two cards per row */
+  }
 }
-.venues__card .movil {
 
-}
-
+/* make softer edges on the photo as well as make cards flexible towards the picture*/
 
 .venues__button.active-venue {
   background-color: var(--first-color);
@@ -489,6 +502,53 @@ Media screen and (max-width: 320px) {
 .venues__item:hover {
   background-color: var(--hover-color);
 }
+
+/* Image styling */
+.venues__card img {
+  width: 100%; /* Ensure image fills the container */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 15px; /* Space between image and text */
+}
+
+/* Styling for venue title */
+.venues__title {
+  font-size: 1.5rem; /* Larger font size */
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+/* Styling for venue description */
+.venues__description {
+  text-align: center; /* Center align description */
+  margin-bottom: 15px; /* Space between description and button */
+}
+
+/* Styling for venue button */
+.venue__button {
+  background-color: #FF5722; /* Orange button color */
+  color: white; /* White text for better visibility */
+  padding: 10px 20px; /* Padding for button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth transition for button */
+}
+
+/* Hover effect for button */
+.venue__button:hover {
+  background-color: #E64A19; /* Darker orange on hover */
+  flex-wrap: wrap;
+  grid-row:
+
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .venues__card {
+    flex: 0 0 calc(50% - 20px); /* Two cards per row */
+  }
+}
+
+/*venues*/
 /* Active link */
 .active-link {
   background: linear-gradient(180deg, 
