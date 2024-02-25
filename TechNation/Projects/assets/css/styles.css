@@ -43,7 +43,7 @@
 }
 
 /* Responsive typography */
-@media screen and (min-width: 968px) {
+Media screen and (min-width: 968px) {
   :root {
     --biggest-font-size: 2.5rem;
     --h1-font-size: 2.25rem;
@@ -222,21 +222,21 @@ body.light-theme {
 }
 
 /* For small devices */
-@media screen and (max-width: 575.98px) {
+Media screen and (max-width: 575.98px) {
   .nav__icon {
     font-size: 20px; /* Adjust the size for smaller screens */
   }
 }
 
 /* For medium devices */
-@media screen and (min-width: 576px) {
+Media screen and (min-width: 576px) {
   .nav__icon {
     font-size: 24px; /* Default size for medium devices */
   }
 }
 
 /* For large devices */
-@media screen and (min-width: 992px) {
+Media screen and (min-width: 992px) {
   .nav__icon {
     font-size: 28px; /* Adjust the size for larger screens */
   }
@@ -325,7 +325,7 @@ body.light-theme {
 
 
 /* Adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+Media screen and (max-width: 768px) {
   .nav__menu {
     width: 90%; /* Adjusted width for smaller screens */
     max-width: 480px; /* Adjusted maximum width */
@@ -334,7 +334,7 @@ body.light-theme {
 }
 
 /* Adjustments for larger screens */
-@media screen and (min-width: 1200px) {
+Media screen and (min-width: 1200px) {
   .nav__menu {
     width: 70%; /* Adjusted width for larger screens */
     max-width: 40%; /* Adjusted maximum width */
@@ -377,7 +377,7 @@ body.light-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+Media screen and (max-width: 320px) {
   .nav__menu {
     padding: 1rem 1.5rem;
   }
