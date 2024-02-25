@@ -441,6 +441,24 @@ Media screen and (max-width: 320px) {
   column-gap: .25rem;
 }
 
+/* Make the card transparent but dark */
+.venues__card {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with 50% opacity */
+  color: white; /* White text for better visibility */
+}
+
+.venues__card .web {
+  flex: 1; 
+  margin-top: 20px;
+}
+.venues__card .design {
+
+}
+.venues__card .movil {
+
+}
+
+
 .venues__button.active-venue {
   background-color: var(--first-color);
   color: var(--body-color);
