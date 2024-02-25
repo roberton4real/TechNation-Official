@@ -138,6 +138,7 @@
             
 
    <!--=============== MAIN ===============-->
+<main class="main">
     <!--=============== HOME ===============-->
     <div id="slider" style="padding-top: 120px;">
         <figure>
@@ -147,6 +148,7 @@
             <img src="https://images.unsplash.com/photo-1499720843949-d9e6f318dca0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             <img src="https://images.unsplash.com/photo-1529068726703-d4dfa1c99b99?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
         </figure>
+    <section class="section home" id="home" style="padding: 5vw;">
         <span class="section__subtitle">Welcome</span>
         <h2 class="section__title">Welcome to FootSteps</h2>
         <div class="home__container container grid" style="padding: 5vw;">
@@ -172,42 +174,48 @@
         </div>
     </section>
 
-<!--=============== VENUES ===============-->
-<section class="section venues" id="venues" style="padding: 5vw;">
-    <span class="section__subtitle">Venues</span>
-    <h2 class="section__title">Explore Venues</h2>
-    <div class="venues__container container grid" style="padding: 5vw;">
-
-        <div class="venues__filters">
-            <span class="venues__item active-venue" data-filter='all' onclick="filterCards('all', this)">All</span>
-            <span class="venues__item" data-filter='.web' onclick="filterCards('web', this)">Live</span>
-            <span class="venues__item" data-filter='.movil' onclick="filterCards('movil', this)">Art</span>
-            <span class="venues__item" data-filter='.design' onclick="filterCards('design', this)">Outdoor</span>
+ 
+    <!--=============== VENUES ===============-->
+    <section class="section venues" id="venues" style="padding: 0px;">
+        <span class="section__subtitle">Venues</span>
+        <h2 class="section__title">Explore Venues</h2>
+        <div class="venues__container container grid" style="padding: 0px;">
+    
+            <div class="venues__filters">
+                <span class="venues__item active-venue" data-filter='all' onclick="filterCards('all', this)">All</span>
+                <span class="venues__item" data-filter='.web' onclick="filterCards('web', this)">Live</span>
+                <span class="venues__item" data-filter='.movil' onclick="filterCards('movil', this)">Art</span>
+                <span class="venues__item" data-filter='.design' onclick="filterCards('design', this)">Outdoor</span>
+            </div>
+    
+    
+            <div class="venues__container">
+                <!-- Venue exploration and listing goes here -->
+                <div class="venues__card web"> <!-- Added class 'web' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Live Music Concert" class="venue__img">
+                    <h3 class="venue__title">Live Music Concert</h3>
+                    <p class="venue__description">Join us for an unforgettable night of live<br>
+                         music featuring renowned artists from around the world.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Get Tickets</a>
+                </div>
+                <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1635399860495-2a2802a6df5e?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art Exhibition" class="venue__img">
+                    <h3 class="venue__title">Art Exhibition</h3>
+                    <p class="venue__description">Explore a diverse collection of artworks by <br>
+                        talented local artists at our upcoming exhibition.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">View Artists</a>
+                </div>
+                <div class="venues__card movil"> <!-- Added class 'movil' to identify this card -->
+                    <img src="https://plus.unsplash.com/premium_photo-1700869225346-752b3363a8d6?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Outdoor Festival" class="venue__img">
+                    <h3 class="venue__title">Outdoor Festival</h3>
+                    <p class="venue__description">Experience the excitement of our outdoor <br>
+                        festival with food, drinks, and live entertainment.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Learn More</a>
+                </div>
+            </div>
         </div>
-
-        <!-- Venue exploration and listing goes here -->
-        <div class="venues__card web"> <!-- Added class 'web' to identify this card -->
-            <img src="path/to/live_music_concert.jpg" alt="Live Music Concert" class="venue__img">
-            <h3 class="venue__title">Live Music Concert</h3>
-            <p class="venue__description">Join us for an unforgettable night of live music featuring renowned artists from around the world.</p>
-            <a href="#" class="venue__button">Get Tickets</a>
-        </div>
-        <div class="venues__card movil"> <!-- Added class 'movil' to identify this card -->
-            <img src="path/to/outdoor_festival.jpg" alt="Outdoor Festival" class="venue__img">
-            <h3 class="venue__title">Outdoor Festival</h3>
-            <p class="venue__description">Experience the excitement of our outdoor festival with food, drinks, and live entertainment.</p>
-            <a href="#" class="venue__button">Learn More</a>
-        </div>
-        <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
-            <img src="path/to/art_exhibition.jpg" alt="Art Exhibition" class="venue__img">
-            <h3 class="venue__title">Art Exhibition</h3>
-            <p class="venue__description">Explore a diverse collection of artworks by talented local artists at our upcoming exhibition.</p>
-            <a href="#" class="venue__button">View Artists</a>
-        </div>
-        <!-- Add more venue cards as needed -->
-    </div>
-</section>
-
+    </section>
+   
 <script>
     function filterCards(category, button) {
         var cards = document.querySelectorAll('.venues__card');
