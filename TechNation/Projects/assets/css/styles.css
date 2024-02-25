@@ -728,48 +728,58 @@ Media screen and (max-width: 320px) {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.event-card {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--first-color);
 }
 
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+.footer__container {
+  padding: 2rem 0 6rem;
 }
 
-.event-content {
+.footer__title, 
+.footer__link {
+  color: var(--body-color);
+}
+
+.footer__title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
-.event-content h1 {
-  font-size: 2rem; /* Adjusted font size */
-  color: #333;
-  margin-bottom: 5px;
+.footer__list {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.event-card button {
-  background-color: #FF5E5E;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
+.footer__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
 }
 
-.event-card button:hover {
-  background-color: #E50000;
+.footer__social-link {
+  background-color: var(--body-color);
+  color: var(--first-color);
+  padding: .25rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  display: inline-flex;
 }
+
+.footer__copy {
+  display: block;
+  margin-top: 4.5rem;
+  color: var(--container-color);
+  text-align: center;
+  font-size: var(--smaller-font-size);
+}
+  .footer__social-link {
+    font-size: 1.25rem;
+    padding: .4rem;
+    border-radius: .5rem;
+  }
+
+   
