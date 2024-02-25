@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title> FootSteps - TechNation </title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#home" class="nav__logo" 
+            >FootSteps</a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <div class="nav__icon-container">
+                                 Home 
+                            </div>
+                            <!--Home-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#search" class="nav__link">
+                            <div class="nav__icon-container">
+                                Search
+                            </div>
+                            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+                            <script>
+                              var typingEffect = new Typed(".multiText", {
+                                strings : ["Junior Software Engineer", "DevOps Engineer", "Cloud Engineer", "Cloud Security Engineer"], 
+                                loop : true, 
+                                typeSpeed : 100,
+                                backSpeed : 80, 
+                                backDelay : 1500,
+                              });
+                            </script>
+                            <!--Search-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#events" class="nav__link">
+                            <div class="nav__icon-container">
+                                Events
+                            </div>
+                            <!--Events-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#venues" class="nav__link">
+                            <div class="nav__icon-container">
+                                Venues
+                            </div>
+                            <!--Venues-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#profile" class="nav__link">
+                            <div class="nav__icon-container">
+                                Profile
+                            </div>
+                            <!--My Profile-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#create-event" class="nav__link">
+                            <div class="nav__icon-container">
+                                Event
+                            </div>
+                            <!--Create Event-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#community" class="nav__link">
+                            <div class="nav__icon-container">
+                                Community
+                            </div>
+                            <!--Community-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#settings" class="nav__link">
+                            <div class="nav__icon-container">
+                                Settings
+                            </div>
+                            <!--Settings-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+               <!-- Theme change button -->
+<i class='bx bx-moon change-theme' id="theme-button" style="text-align:center"></i>
+</nav>
+</header>
+<script>
+    const themeButton = document.getElementById('theme-button');
+
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
+        const isDarkMode = document.body.classList.contains('dark-theme');
+        if (isDarkMode) {
+            themeButton.classList.remove('bx-sun'); // Remove sun icon
+            themeButton.classList.add('bx-moon'); // Add moon icon
+        } else {
+            themeButton.classList.remove('bx-moon'); // Remove moon icon
+            themeButton.classList.add('bx-sun'); // Add sun icon
+        }
+    });
+
+    // Check for initial theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            document.body.classList.add('dark-theme');
+            themeButton.classList.remove('bx-moon');
+            themeButton.classList.add('bx-sun');
+        }
+    });
+</script>
+
+            
+
+   <!--=============== MAIN ===============-->
+<main class="main">
+    <!--=============== HOME ===============-->
+    <section class="section home" id="home" style="padding: 5vw;">
+        <span class="section__subtitle">Welcome</span>
+        <h2 class="section__title">Welcome to FootSteps</h2>
+        <div class="home__container container grid" style="padding: 5vw;">
+            <!-- Home screen content goes here -->
+        </div>
+    </section>
+
+    <!--=============== SEARCH ===============-->
+    <section class="section search" id="search" style="padding: 5vw;">
+        <span class="section__subtitle">Search</span>
+        <h2 class="section__title">Search for Events</h2>
+        <div class="search__container container grid" style="padding: 5vw;">
+            <!-- Search functionality goes here -->
+        </div>
+    </section>
+
+    <!--=============== EVENTS ===============-->
+    <section class="section events" id="events" style="padding: 5vw;">
+        <span class="section__subtitle">Events</span>
+        <h2 class="section__title">Upcoming Events</h2>
+        <div class="events__container container grid" style="padding: 5vw;">
+            <!-- Event browsing and listing goes here -->
+        </div>
+    </section>
+
+    <!--=============== VENUES ===============-->
+    <section class="section venues" id="venues" style="padding: 5vw;">
+        <span class="section__subtitle">Venues</span>
+        <h2 class="section__title">Explore Venues</h2>
+        <div class="venues__container container grid" style="padding: 5vw;">
+            <!-- Venue exploration and listing goes here -->
+        </div>
+    </section>
+
+    <!--=============== MY PROFILE ===============-->
+    <section class="section profile" id="profile" style="padding: 5vw;">
+        <span class="section__subtitle">Profile</span>
+        <h2 class="section__title">My Profile</h2>
+        <div class="profile__container container grid" style="padding: 5vw;">
+            <!-- User profile management goes here -->
+        </div>
+    </section>
+
+    <!--=============== CREATE EVENT ===============-->
+    <section class="section create-event" id="create-event" style="padding: 5vw;">
+        <span class="section__subtitle">Create Event</span>
+        <h2 class="section__title">Create Your Event</h2>
+        <div class="create-event__container container grid" style="padding: 5vw;">
+            <!-- Event creation functionality goes here -->
+        </div>
+    </section>
+
+    <!--=============== COMMUNITY ===============-->
+    <section class="section community" id="community" style="padding: 5vw;">
+        <span class="section__subtitle">Community</span>
+        <h2 class="section__title">Join the Community</h2>
+        <div class="community__container container grid" style="padding: 5vw;">
+            <!-- Community forum and social feed goes here -->
+        </div>
+    </section>
+
+    <!--=============== SETTINGS ===============-->
+    <section class="section settings" id="settings" style="padding: 5vw;">
+        <span class="section__subtitle">Settings</span>
+        <h2 class="section__title">App Settings</h2>
+        <div class="settings__container container grid" style="padding: 5vw;">
+            <!-- App settings and user preferences go here -->
+        </div>
+    </section>
+</main>
+
+
+   <!-- Additional scripts -->
+   <script>
+    const themeButton = document.getElementById('theme-button');
+
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
+        const isDarkMode = document.body.classList.contains('dark-theme');
+        if (isDarkMode) {
+            themeButton.classList.remove('bx-moon'); // Remove moon icon
+            themeButton.classList.add('bx-sun'); // Add sun icon
+        } else {
+            themeButton.classList.remove('bx-sun'); // Remove sun icon
+            themeButton.classList.add('bx-moon'); // Add moon icon
+        }
+    });
+
+    // Check for initial theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            document.body.classList.add('dark-theme');
+            themeButton.classList.remove('bx-moon');
+            themeButton.classList.add('bx-sun');
+        }
+    });
+</script>
+<script>
+    // JavaScript to toggle the overlay
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.querySelector('.overlay');
+    const body = document.querySelector('body');
+  
+    // Function to show the overlay
+    function showOverlay() {
+      overlay.classList.remove('overlay-hidden');
+      body.style.overflow = 'hidden'; // Hide scrollbars
+    }
+  
+    // Function to hide the overlay
+    function hideOverlay() {
+      overlay.classList.add('overlay-hidden');
+      body.style.overflow = ''; // Show scrollbars
+    }
+  
+    // Example: Toggle overlay when clicking a button
+    const toggleButton = document.querySelector('#toggle-overlay-button');
+    toggleButton.addEventListener('click', function() {
+      if (overlay.classList.contains('overlay-hidden')) {
+        showOverlay();
+      } else {
+        hideOverlay();
+      }
+    });
+  });
+  
+</script>
+
+<!--=============== SCROLLREVEAL ===============-->
+<script src="assets/js/scrollreveal.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="assets/js/swiper-bundle.min.js"></script>
+
+<!--=============== MIXITUP FILTER ===============-->
+<script src="assets/js/mixitup.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

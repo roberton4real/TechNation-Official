@@ -1,0 +1,403 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-hue: 250; /* Changed to numeric value */
+  --sat: 97%;
+  --lig: 50%;
+  --second-hue: 207; /* Changed to numeric value */
+  
+  --first-color: hsl(var(--first-hue), 66%, 75%); /* Adjusted to use variables */
+  --first-color-alt: hsl(var(--first-hue), 72%, 41%);
+  --title-color: hsl(var(--first-hue), 66%, 75%);
+  --text-color: hsl(var(--second-hue), 47%, 91%); /* Adjusted to use variables */
+  --text-color-light: hsl(29, 58%, 9%);
+  --body-color: hsl(200, 23%, 95%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+  
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.1s;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Dark theme styles */
+.dark-theme {
+  --first-hue: 27;
+  --sat: 97%;
+  --lig: 50%;
+  --second-hue: 211;
+  
+  --first-color: hsl(var(--first-hue), 66%, 75%);
+  --first-color-alt: hsl(var(--first-hue), 72%, 41%);
+  --title-color: hsl(var(--first-hue), 66%, 75%);
+  --text-color: hsl(var(--second-hue), 47%, 91%);
+  --text-color-light: hsl(29, 58%, 9%);
+  --body-color: hsl(199, 52%, 46%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+}
+
+/* Light theme styles */
+.light-theme {
+  --first-hue: 0; /* Adjusted to black */
+  --sat: 0%; /* Adjusted to black */
+  --lig: 100%; /* Adjusted to white */
+  --second-hue: 0; /* Adjusted to black */
+
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig)); /* Black */
+  --first-color-alt: hsl(0, 0%, 72%); /* Adjusted light color */
+  --title-color: hsl(var(--first-hue), var(--sat), var(--lig)); /* Black */
+  --text-color: #000; /* Black */
+  --text-color-light: hsl(0, 0%, 9%); /* Adjusted darker color */
+  --body-color: hsl(200, 23%, 95%);
+  --container-color: #fff; /* White */
+}
+
+/*=============== THEME ===============*/
+.change-theme {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/*========== Variables Light theme ==========*/
+body.light-theme {
+  --title-color: hsl(var(--second-hue), 15%, 15%);
+  --text-color: hsl(var(--second-hue), 8%, 35%);
+  --body-color: hsl(var(--second-hue), 100%, 99%);
+  --container-color: #fff;
+}
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+.light-theme .scroll-header {
+  box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.1);
+}
+
+.light-theme .nav__menu {
+  background-color: transparent; /* Remove the gray background */
+  /* Smaller size and padding for the menu */
+  width: 70%; /* Default width for medium-sized screens */
+  max-width: 250px; /* Maximum width */
+  padding: 0.5rem 1rem; /* Padding */
+  
+}
+
+
+.light-theme .section__subtitle {
+  color: var(--text-color);
+}
+
+.light-theme .home__social-link {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme .home__social::after,
+.light-theme .footer__social-link {
+  background-color: var(--title-color);
+}
+
+.light-theme .home__social-link,
+.light-theme .home__scroll,
+.light-theme .button,
+.light-theme .button:hover,
+.light-theme .active-work,
+.light-theme .footer__title,
+.light-theme .footer__link,
+.light-theme .footer__copy{
+  color: var(--title-color);
+}
+
+.light-theme .about__box {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme .section__events,
+.light-theme .section__venues,
+.light-theme .section__profile,
+.light-theme .section__create-events,
+.light-theme .section__community,
+.light-theme .section__settings
+.experience-section {
+  box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme::-webkit-scrollbar {
+  background-color: hsl(var(--second-hue), 8%, 66%);
+}
+
+.light-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--second-hue), 8%, 54%);
+}
+
+.light-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--second-hue), 8%, 44%);
+}
+
+/* For small devices */
+@media screen and (max-width: 575.98px) {
+  .nav__icon {
+    font-size: 20px; /* Adjust the size for smaller screens */
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__icon {
+    font-size: 24px; /* Default size for medium devices */
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .nav__icon {
+    font-size: 28px; /* Adjust the size for larger screens */
+  }
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: 2rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+/* Header styles */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsla(0, 0%, 50%, 0.5); /* Adjust as needed */
+  color: white; /* Adjust as needed */
+  padding: 1rem 0; /* Adjust as needed */
+  margin: 0; /* Reset margin */
+}
+
+.box-icon {
+  display: flex;
+  align-items: center;
+}
+
+.box-icon i {
+  margin-right: 10px; /* Adjust as needed */
+  font-size: 20px; /* Adjust as needed */
+}
+
+
+.menuicon {
+  display: flex;
+  align-items: center;
+}
+
+.menuicon a {
+  color: white; /* Adjust as needed */
+  margin-right: 1rem; /* Adjust as needed */
+  text-decoration: none;
+}
+
+.menuicon .fa-bars {
+  font-size: 1.5rem; /* Adjust as needed */
+  
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul li {
+  margin-right: 1rem; /* Adjust as needed */
+}
+
+ul li:last-child {
+  margin-right: 0; /* Adjust as needed */
+}
+
+ul li a {
+  color: white; /* Adjust as needed */
+  text-decoration: none;
+}
+
+/* Active link styles */
+.active {
+  font-weight: bold; /* Adjust as needed */
+}
+
+/* Icon file styles */
+.icon-file a {
+  display: flex;
+  align-items: center;
+  color: white; /* Adjust as needed */
+}
+
+.icon-file .fa {
+  margin-right: 0.5rem; /* Adjust as needed */
+}
+
+/* Hide the side menu initially */
+#side-menu {
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1rem 1.5rem;
+  }
+
+  .home__buttons {
+    flex-direction: column;
+  }
+}
+
+/* Position and align the moon, sun, and footsteps icons */
+#theme-button {
+  position: fixed;
+  top: 1rem; /* Adjust the distance from the top */
+  right: 10px; /* Adjust the distance from the right */
+  font-size: 24px;
+  color: var(--first-color);
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Add this code at the end of your CSS */
+
+/* Gray overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 50%, 0.5); /* Adjust the HSL values and opacity as needed */
+  z-index: 999; /* Ensure it's below the navbar but above the content */
+}
+
+/* Hide the overlay by default */
+.overlay-hidden {
+  display: none;
+}
