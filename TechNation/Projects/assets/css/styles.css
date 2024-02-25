@@ -100,7 +100,7 @@ button {
 }
 
 img {
-  max-width: 100%;
+  max-width: 35%;
   height: auto;
 }
 
@@ -116,7 +116,7 @@ img {
   --title-color: hsl(var(--first-hue), 66%, 75%);
   --text-color: hsl(var(--second-hue), 47%, 91%);
   --text-color-light: hsl(29, 58%, 9%);
-  --body-color: hsl(199, 52%, 46%);
+  --body-color: #D9E2D5;
   --container-color: hsl(var(--second-hue), 32%, 12%);
 }
 
@@ -164,14 +164,12 @@ body.light-theme {
 }
 
 .light-theme .nav__menu {
-  background-color: transparent; /* Remove the gray background */
+  background-color: hsla(var(--second-hue), 32%, 90%, 0.8);
   /* Smaller size and padding for the menu */
   width: 70%; /* Default width for medium-sized screens */
   max-width: 250px; /* Maximum width */
   padding: 0.5rem 1rem; /* Padding */
-  
 }
-
 
 .light-theme .section__subtitle {
   color: var(--text-color);
@@ -282,84 +280,100 @@ body.light-theme {
 }
 
 /* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+  background: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsla(0, 0%, 50%, 0.5); /* Adjust as needed */
-  color: white; /* Adjust as needed */
-  padding: 1rem 0; /* Adjust as needed */
-  margin: 0; /* Reset margin */
 }
 
-.box-icon {
+.nav__logo {
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+  transition: 0.4s;
+  max-height: 150px;
+  max-width: auto;
+  margin-right: 10px;
+}
+
+.nav__menu {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  width: 80%;
+  max-width: 480px;
+  border-radius: 4rem;
+  padding: 0.5rem 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+}
+
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    width: 90%; /* Adjusted width for smaller screens */
+    max-width: 480px; /* Adjusted maximum width */
+    padding: 0.5rem 1rem; /* Adjusted padding */
+  }
+}
+
+/* Adjustments for larger screens */
+@media screen and (min-width: 1200px) {
+  .nav__menu {
+    width: 70%; /* Adjusted width for larger screens */
+    max-width: 40%; /* Adjusted maximum width */
+    padding: 0.5rem 2rem; /* Adjusted padding */
+  }
+}
+
+
+.nav__list {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.box-icon i {
-  margin-right: 10px; /* Adjust as needed */
-  font-size: 20px; /* Adjust as needed */
+.nav__item {
+  margin-right: 20px;
 }
 
-
-.menuicon {
+.nav__link {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  padding: 0.4rem;
   display: flex;
-  align-items: center;
+  border-radius: 5rem;
 }
 
-.menuicon a {
-  color: white; /* Adjust as needed */
-  margin-right: 1rem; /* Adjust as needed */
-  text-decoration: none;
+.nav__link:hover {
+  color: #007bff;
 }
 
-.menuicon .fa-bars {
-  font-size: 1.5rem; /* Adjust as needed */
-  
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(207, 90%, 72%, 1), /* Change the HSL values to the desired color */
+              hsla(207, 90%, 72%, 0.2)
+            );
+  box-shadow: 0 0 16px hsla(207, 90%, 72%, 0.4);
+  color: var(--title-color);
 }
 
-ul {
-  display: flex;
-  list-style: none;
-}
-
-ul li {
-  margin-right: 1rem; /* Adjust as needed */
-}
-
-ul li:last-child {
-  margin-right: 0; /* Adjust as needed */
-}
-
-ul li a {
-  color: white; /* Adjust as needed */
-  text-decoration: none;
-}
-
-/* Active link styles */
-.active {
-  font-weight: bold; /* Adjust as needed */
-}
-
-/* Icon file styles */
-.icon-file a {
-  display: flex;
-  align-items: center;
-  color: white; /* Adjust as needed */
-}
-
-.icon-file .fa {
-  margin-right: 0.5rem; /* Adjust as needed */
-}
-
-/* Hide the side menu initially */
-#side-menu {
-  width: 0;
-  margin-left: 0;
-  overflow: hidden;
-  transition: 0.5s;
-}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -373,31 +387,101 @@ ul li a {
   }
 }
 
-/* Position and align the moon, sun, and footsteps icons */
+/* Align moon button to the top-right corner */
 #theme-button {
-  position: fixed;
-  top: 1rem; /* Adjust the distance from the top */
-  right: 10px; /* Adjust the distance from the right */
+  position: fixed; /* Use fixed position to keep it visible while scrolling */
+  top: 10px;
+  right: 10px;
   font-size: 24px;
   color: var(--first-color);
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
 }
-
-/* Add this code at the end of your CSS */
-
-/* Gray overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(0, 0%, 50%, 0.5); /* Adjust the HSL values and opacity as needed */
-  z-index: 999; /* Ensure it's below the navbar but above the content */
+/*=============== VENUES ===============*/
+.venues__container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Hide the overlay by default */
-.overlay-hidden {
-  display: none;
+.venues__filters {
+  display: flex;
+  justify-content: center;
+}
+
+.venues__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem; /* Add margin between venue cards */
+}
+
+.venues__img {
+  border-radius: 1rem;
+  margin-bottom: .75rem;
+}
+
+.venues__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+
+.venues__description {
+  color: var(--title-color);
+}
+
+.venues__button {
+  width: max-content;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.venues__button.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__button:hover .venues__icon {
+  transform: translateX(.25rem);
+}
+
+.venues__icon {
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.venues__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+}
+
+.venues__item.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__item:hover {
+  background-color: var(--hover-color);
+}
+/* Active link */
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(var(--first-hue), var(--sat), var(--lig), 1), 
+              hsla(var(--first-hue), var(--sat), var(--lig), .2)
+            );
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
+  color: var(--title-color);
+}
+/*Active modal*/
+.active-modal {
+  opacity: 1;
+  visibility: visible;
 }
