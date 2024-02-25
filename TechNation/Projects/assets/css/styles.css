@@ -204,6 +204,7 @@ body.light-theme {
 .light-theme .section__create-events,
 .light-theme .section__community,
 .light-theme .section__settings
+.light-theme .testimonial__card,
 .experience-section {
   box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
 }
@@ -571,6 +572,65 @@ Media screen and (max-width: 320px) {
     column-gap: 3rem;
   } */
 }
+/* Profile Section Styles */
+
+/* Profile container */
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Testimonial section */
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial cards */
+.testimonial__card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial image */
+.testimonial__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Testimonial name */
+.testimonial__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial description */
+.testimonial__description {
+  font-size: 1rem;
+  color: #666;
+}
+
 /*venues*/
 /* Active link */
 .active-link {
