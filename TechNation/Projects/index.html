@@ -1,255 +1,487 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
 
-    <!--=============== BOXICONS ===============-->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-hue: 250; /* Changed to numeric value */
+  --sat: 97%;
+  --lig: 50%;
+  --second-hue: 207; /* Changed to numeric value */
+  
+  --first-color: hsl(var(--first-hue), 66%, 75%); /* Adjusted to use variables */
+  --first-color-alt: hsl(var(--first-hue), 72%, 41%);
+  --title-color: hsl(var(--first-hue), 66%, 75%);
+  --text-color: hsl(var(--second-hue), 47%, 91%); /* Adjusted to use variables */
+  --text-color-light: hsl(29, 58%, 9%);
+  --body-color: hsl(200, 23%, 95%);
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+  
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
 
-    <!--=============== SWIPER CSS ===============-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semibold: 600;
 
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
 
-    <title> FootSteps - TechNation </title>
-</head>
-<body>
-    <!--=============== HEADER ===============-->
-    <header class="header">
-        <a href="#home" class="nav__logo">
-            <img src="./assets/img/Footsteps-logos.png" alt="FootSteps">
-        </a>
-        <nav class="nav container">
-            <div class="nav__menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <div class="nav__icon-container">
-                                <i class='bx bx-home'></i> <!-- Home Icon -->
-                            </div>
-                            <!--Home-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#search" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-search"></i>
-                            </div>
-                            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-                            <script>
-                              var typingEffect = new Typed(".multiText", {
-                                strings : ["Junior Software Engineer", "DevOps Engineer", "Cloud Engineer", "Cloud Security Engineer"], 
-                                loop : true, 
-                                typeSpeed : 100,
-                                backSpeed : 80, 
-                                backDelay : 1500,
-                              });
-                            </script>
-                            <!--Search-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#events" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-calendar-event"></i>
-                            </div>
-                            <!--Events-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#venues" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-buildings"></i>
-                            </div>
-                            <!--Venues-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#profile" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-user"></i>
-                            </div>
-                            <!--My Profile-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#create-event" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-plus"></i>
-                            </div>
-                            <!--Create Event-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#community" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-chat"></i>
-                            </div>
-                            <!--Community-->
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#settings" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-cog"></i>
-                            </div>
-                            <!--Settings-->
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-               <!-- Theme change button -->
-<i class='bx bx-moon change-theme' id="theme-button" style="text-align:center"></i>
-</nav>
-</header>
-<script>
-    const themeButton = document.getElementById('theme-button');
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
 
-    themeButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
-        const isDarkMode = document.body.classList.contains('dark-theme');
-        if (isDarkMode) {
-            themeButton.classList.remove('bx-sun'); // Remove sun icon
-            themeButton.classList.add('bx-moon'); // Add moon icon
-        } else {
-            themeButton.classList.remove('bx-moon'); // Remove moon icon
-            themeButton.classList.add('bx-sun'); // Add sun icon
-        }
-    });
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
-    // Check for initial theme preference on page load
-    window.addEventListener('DOMContentLoaded', () => {
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDarkMode) {
-            document.body.classList.add('dark-theme');
-            themeButton.classList.remove('bx-moon');
-            themeButton.classList.add('bx-sun');
-        }
-    });
-</script>
+html {
+  scroll-behavior: smooth;
+}
 
-            
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
 
-   <!--=============== MAIN ===============-->
-<main class="main">
-    <!--=============== HOME ===============-->
-    <section class="section home" id="home" style="padding: 5vw;">
-        <span class="section__subtitle">Welcome</span>
-        <h2 class="section__title">Welcome to FootSteps</h2>
-        <div class="home__container container grid" style="padding: 5vw;">
-            <!-- Home screen content goes here -->
-        </div>
-    </section>
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.1s;
+}
 
-    <!--=============== SEARCH ===============-->
-    <section class="section search" id="search" style="padding: 5vw;">
-        <span class="section__subtitle">Search</span>
-        <h2 class="section__title">Search for Events</h2>
-        <div class="search__container container grid" style="padding: 5vw;">
-            <!-- Search functionality goes here -->
-        </div>
-    </section>
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
 
-    <!--=============== EVENTS ===============-->
-    <section class="section events" id="events" style="padding: 5vw;">
-        <span class="section__subtitle">Events</span>
-        <h2 class="section__title">Upcoming Events</h2>
-        <div class="events__container container grid" style="padding: 5vw;">
-            <!-- Event browsing and listing goes here -->
-        </div>
-    </section>
+ul {
+  list-style: none;
+}
 
-    <!--=============== VENUES ===============-->
-    <section class="section venues" id="venues" style="padding: 5vw;">
-        <span class="section__subtitle">Venues</span>
-        <h2 class="section__title">Explore Venues</h2>
-        <div class="venues__container container grid" style="padding: 5vw;">
-            <!-- Venue exploration and listing goes here -->
-        </div>
-    </section>
+a {
+  text-decoration: none;
+}
 
-    <!--=============== MY PROFILE ===============-->
-    <section class="section profile" id="profile" style="padding: 5vw;">
-        <span class="section__subtitle">Profile</span>
-        <h2 class="section__title">My Profile</h2>
-        <div class="profile__container container grid" style="padding: 5vw;">
-            <!-- User profile management goes here -->
-        </div>
-    </section>
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
 
-    <!--=============== CREATE EVENT ===============-->
-    <section class="section create-event" id="create-event" style="padding: 5vw;">
-        <span class="section__subtitle">Create Event</span>
-        <h2 class="section__title">Create Your Event</h2>
-        <div class="create-event__container container grid" style="padding: 5vw;">
-            <!-- Event creation functionality goes here -->
-        </div>
-    </section>
+img {
+  max-width: 35%;
+  height: auto;
+}
 
-    <!--=============== COMMUNITY ===============-->
-    <section class="section community" id="community" style="padding: 5vw;">
-        <span class="section__subtitle">Community</span>
-        <h2 class="section__title">Join the Community</h2>
-        <div class="community__container container grid" style="padding: 5vw;">
-            <!-- Community forum and social feed goes here -->
-        </div>
-    </section>
+/* Dark theme styles */
+.dark-theme {
+  --first-hue: 27;
+  --sat: 97%;
+  --lig: 50%;
+  --second-hue: 211;
+  
+  --first-color: hsl(var(--first-hue), 66%, 75%);
+  --first-color-alt: hsl(var(--first-hue), 72%, 41%);
+  --title-color: hsl(var(--first-hue), 66%, 75%);
+  --text-color: hsl(var(--second-hue), 47%, 91%);
+  --text-color-light: hsl(29, 58%, 9%);
+  --body-color: #D9E2D5;
+  --container-color: hsl(var(--second-hue), 32%, 12%);
+}
 
-    <!--=============== SETTINGS ===============-->
-    <section class="section settings" id="settings" style="padding: 5vw;">
-        <span class="section__subtitle">Settings</span>
-        <h2 class="section__title">App Settings</h2>
-        <div class="settings__container container grid" style="padding: 5vw;">
-            <!-- App settings and user preferences go here -->
-        </div>
-    </section>
-</main>
+/* Light theme styles */
+.light-theme {
+  --first-hue: 0; /* Adjusted to black */
+  --sat: 0%; /* Adjusted to black */
+  --lig: 100%; /* Adjusted to white */
+  --second-hue: 0; /* Adjusted to black */
+
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig)); /* Black */
+  --first-color-alt: hsl(0, 0%, 72%); /* Adjusted light color */
+  --title-color: hsl(var(--first-hue), var(--sat), var(--lig)); /* Black */
+  --text-color: #000; /* Black */
+  --text-color-light: hsl(0, 0%, 9%); /* Adjusted darker color */
+  --body-color: hsl(200, 23%, 95%);
+  --container-color: #fff; /* White */
+}
+
+/*=============== THEME ===============*/
+.change-theme {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/*========== Variables Light theme ==========*/
+body.light-theme {
+  --title-color: hsl(var(--second-hue), 15%, 15%);
+  --text-color: hsl(var(--second-hue), 8%, 35%);
+  --body-color: hsl(var(--second-hue), 100%, 99%);
+  --container-color: #fff;
+}
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+.light-theme .scroll-header {
+  box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.1);
+}
+
+.light-theme .nav__menu {
+  background-color: hsla(var(--second-hue), 32%, 90%, 0.8);
+  /* Smaller size and padding for the menu */
+  width: 70%; /* Default width for medium-sized screens */
+  max-width: 250px; /* Maximum width */
+  padding: 0.5rem 1rem; /* Padding */
+}
+
+.light-theme .section__subtitle {
+  color: var(--text-color);
+}
+
+.light-theme .home__social-link {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme .home__social::after,
+.light-theme .footer__social-link {
+  background-color: var(--title-color);
+}
+
+.light-theme .home__social-link,
+.light-theme .home__scroll,
+.light-theme .button,
+.light-theme .button:hover,
+.light-theme .active-work,
+.light-theme .footer__title,
+.light-theme .footer__link,
+.light-theme .footer__copy{
+  color: var(--title-color);
+}
+
+.light-theme .about__box {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme .section__events,
+.light-theme .section__venues,
+.light-theme .section__profile,
+.light-theme .section__create-events,
+.light-theme .section__community,
+.light-theme .section__settings
+.experience-section {
+  box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme::-webkit-scrollbar {
+  background-color: hsl(var(--second-hue), 8%, 66%);
+}
+
+.light-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--second-hue), 8%, 54%);
+}
+
+.light-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--second-hue), 8%, 44%);
+}
+
+/* For small devices */
+@media screen and (max-width: 575.98px) {
+  .nav__icon {
+    font-size: 20px; /* Adjust the size for smaller screens */
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__icon {
+    font-size: 24px; /* Default size for medium devices */
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px) {
+  .nav__icon {
+    font-size: 28px; /* Adjust the size for larger screens */
+  }
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: 2rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 50px;
+  background: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+  transition: 0.4s;
+  max-height: 150px;
+  max-width: auto;
+  margin-right: 10px;
+}
+
+.nav__menu {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  width: 80%;
+  max-width: 480px;
+  border-radius: 4rem;
+  padding: 0.5rem 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+}
 
 
-   <!-- Additional scripts -->
-   <script>
-    const themeButton = document.getElementById('theme-button');
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    width: 90%; /* Adjusted width for smaller screens */
+    max-width: 480px; /* Adjusted maximum width */
+    padding: 0.5rem 1rem; /* Adjusted padding */
+  }
+}
 
-    themeButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
-        const isDarkMode = document.body.classList.contains('dark-theme');
-        if (isDarkMode) {
-            themeButton.classList.remove('bx-moon'); // Remove moon icon
-            themeButton.classList.add('bx-sun'); // Add sun icon
-        } else {
-            themeButton.classList.remove('bx-sun'); // Remove sun icon
-            themeButton.classList.add('bx-moon'); // Add moon icon
-        }
-    });
+/* Adjustments for larger screens */
+@media screen and (min-width: 1200px) {
+  .nav__menu {
+    width: 70%; /* Adjusted width for larger screens */
+    max-width: 40%; /* Adjusted maximum width */
+    padding: 0.5rem 2rem; /* Adjusted padding */
+  }
+}
 
-    // Check for initial theme preference on page load
-    window.addEventListener('DOMContentLoaded', () => {
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDarkMode) {
-            document.body.classList.add('dark-theme');
-            themeButton.classList.remove('bx-moon');
-            themeButton.classList.add('bx-sun');
-        }
-    });
-</script>
 
-<!--=============== SCROLLREVEAL ===============-->
-<script src="assets/js/scrollreveal.min.js"></script>
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-<!--=============== SWIPER JS ===============-->
-<script src="assets/js/swiper-bundle.min.js"></script>
+.nav__item {
+  margin-right: 20px;
+}
 
-<!--=============== MIXITUP FILTER ===============-->
-<script src="assets/js/mixitup.min.js"></script>
+.nav__link {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  padding: 0.4rem;
+  display: flex;
+  border-radius: 5rem;
+}
 
-<!--=============== MAIN JS ===============-->
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+.nav__link:hover {
+  color: #007bff;
+}
+
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(207, 90%, 72%, 1), /* Change the HSL values to the desired color */
+              hsla(207, 90%, 72%, 0.2)
+            );
+  box-shadow: 0 0 16px hsla(207, 90%, 72%, 0.4);
+  color: var(--title-color);
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1rem 1.5rem;
+  }
+
+  .home__buttons {
+    flex-direction: column;
+  }
+}
+
+/* Align moon button to the top-right corner */
+#theme-button {
+  position: fixed; /* Use fixed position to keep it visible while scrolling */
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: var(--first-color);
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+/*=============== VENUES ===============*/
+.venues__container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.venues__filters {
+  display: flex;
+  justify-content: center;
+}
+
+.venues__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem; /* Add margin between venue cards */
+}
+
+.venues__img {
+  border-radius: 1rem;
+  margin-bottom: .75rem;
+}
+
+.venues__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: .25rem;
+}
+
+.venues__description {
+  color: var(--title-color);
+}
+
+.venues__button {
+  width: max-content;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.venues__button.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__button:hover .venues__icon {
+  transform: translateX(.25rem);
+}
+
+.venues__icon {
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.venues__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+}
+
+.venues__item.active-venue {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.venues__item:hover {
+  background-color: var(--hover-color);
+}
+/* Active link */
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(var(--first-hue), var(--sat), var(--lig), 1), 
+              hsla(var(--first-hue), var(--sat), var(--lig), .2)
+            );
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
+  color: var(--title-color);
+}
+/*Active modal*/
+.active-modal {
+  opacity: 1;
+  visibility: visible;
+}
