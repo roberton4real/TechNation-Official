@@ -720,7 +720,7 @@ Media screen and (max-width: 320px) {
 }
 .popup {
   width: 400px;
-  background: #fff;
+  background: #a76464;
   border-radius: 6px;
   position: absolute;
   top: 50%;
@@ -728,4 +728,48 @@ Media screen and (max-width: 320px) {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.event-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
 
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.event-content {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-content h1 {
+  font-size: 2rem; /* Adjusted font size */
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.event-card button {
+  background-color: #FF5E5E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+}
+
+.event-card button:hover {
+  background-color: #E50000;
+}
