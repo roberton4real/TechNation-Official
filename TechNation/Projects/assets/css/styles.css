@@ -248,6 +248,7 @@ Media screen and (min-width: 992px) {
   max-width: 968px;
   margin-left: auto;
   margin-right: auto;
+  text-align: -webkit-center;
 }
 
 .grid {
