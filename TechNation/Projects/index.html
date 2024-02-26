@@ -96,13 +96,6 @@ function closePopup(){
                             <!--My Profile-->
                         </a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#create-event" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-plus"></i>
-                            </div>
-                            <!--Create Event-->
-                        </a>
                     </li>
                     <li class="nav__item">
                         <a href="#community" class="nav__link">
@@ -112,13 +105,7 @@ function closePopup(){
                             <!--Community-->
                         </a>
                     </li>
-                    <li class="nav__item">
-                        <a href="#settings" class="nav__link">
-                            <div class="nav__icon-container">
-                                <i class="nav__icon bx bx-cog"></i>
-                            </div>
-                            <!--Settings-->
-                        </a>
+                    
                     </li>
                 </ul>
             </div>
@@ -156,10 +143,12 @@ function closePopup(){
 
             
 
-   <!--=============== MAIN ===============-->
-<main class="main">
+
     <!--=============== HOME ===============-->
-    <div id="slider" style="padding-top: 120px;">
+    <section class="section home" id="home">
+        <main class="main">
+    <!--=============== SLIDER ===============-->
+    <div id="slider">
         <figure>
             <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             <img src="https://images.unsplash.com/photo-1549831838-0a396da91847?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
@@ -167,32 +156,8 @@ function closePopup(){
             <img src="https://images.unsplash.com/photo-1499720843949-d9e6f318dca0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             <img src="https://images.unsplash.com/photo-1529068726703-d4dfa1c99b99?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
         </figure>
-    <section class="section home" id="home" style="padding: 5vw;">
-        <span class="section__subtitle">Welcome</span>
-        <h2 class="section__title">Welcome to FootSteps</h2>
-        <div class="home__container container grid" style="padding: 5vw;">
-            <!-- Home screen content goes here -->
-        </div>
-    </section>
-
-    <!--=============== SEARCH ===============-->
-    <section class="section search" id="search" style="padding: 5vw;">
-        <span class="section__subtitle">Search</span>
-        <h2 class="section__title">Search for Events</h2>
-        <div class="search__container container grid" style="padding: 5vw;">
-            <!-- Search functionality goes here -->
-        </div>
-    </section>
-
-    <!--=============== EVENTS ===============-->
-    <section class="section events" id="events" style="padding: 5vw;">
-        <span class="section__subtitle">Events</span>
-        <h2 class="section__title">Upcoming Events</h2>
-        <div class="events__container container grid" style="padding: 5vw;">
-            <!-- Event browsing and listing goes here -->
-        </div>
-    </section>
-
+    </div>
+</main>
  
     <!--=============== VENUES ===============-->
     <section class="section venues" id="venues" style="padding: 0px;">
@@ -211,7 +176,7 @@ function closePopup(){
                 <!-- Venue exploration and listing goes here -->
                 <div class="venues__card web"> <!-- Added class 'web' to identify this card -->
                     <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Live Music Concert" class="venue__img">
-                    <h3 class="venue__title">Live Music Concert</h3>
+                    <h3 class="venue__title">Trivia Night</h3>
                     <p class="venue__description">Join us for an unforgettable night of live 
                          music featuring renowned artists from around the world.</p>
                     <button type="submit" class="venue__button" onclick="openPopup()" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Get Tickets</button>
@@ -225,7 +190,7 @@ function closePopup(){
                 </div>
                 <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
                     <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art Exhibition" class="venue__img">
-                    <h3 class="venue__title">Digital Art</h3>
+                    <h3 class="venue__title">Book Club</h3>
                     <p class="venue__description">Explore a diverse collection of artworks by 
                         talented local artists at our upcoming exhibition.</p>
                     <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">View Artists</a>
@@ -283,19 +248,49 @@ function closePopup(){
 
     <!--=============== MY PROFILE ===============-->
     <section class="section profile" id="profile" style="padding: 5vw;">
-        <span class="section__subtitle">Profile</span>
-        <h2 class="section__title">My Profile</h2>
+        <span class="section__subtitle"></span>
+        <h2 class="section__title"></h2>
         <div class="profile__container container grid" style="padding: 5vw;">
             <!-- User profile management goes here -->
-        </div>
-    </section>
+             <!--=============== TESTIMONIALS ===============-->
+             <section class="testimonial section">
+                <span class="section__subtitle">Profile</span>
+                <h2 class="section__title">Artist Profile</h2>
 
-    <!--=============== CREATE EVENT ===============-->
-    <section class="section create-event" id="create-event" style="padding: 5vw;">
-        <span class="section__subtitle">Create Event</span>
-        <h2 class="section__title">Create Your Event</h2>
-        <div class="create-event__container container grid" style="padding: 5vw;">
-            <!-- Event creation functionality goes here -->
+                <div class="testimonial__container container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/giselle.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">Giselle Almario</h3>
+                            <p class="testimonial__description">
+                                Engaged in advocacy for marginalized communities and dedicated to fostering inclusivity and diversity through performative arts. Truly commendable work!
+            </p>
+                            </p>
+                        </div>
+
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/newjohn.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">New John Refuse</h3>
+                            <p class="testimonial__description">
+                                Expert in community activism and passionate about leveraging the power of the arts to drive social change. An invaluable asset to any cause!
+                            </p>
+                        </div>
+
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/Rayyan.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">Rayyan Dabbous</h3>
+                            <p class="testimonial__description">
+                                Passionate advocate for social justice, specializing in civil rights law and dedicated to advancing causes like Roe v. Wade. A true inspiration!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -307,16 +302,6 @@ function closePopup(){
             <!-- Community forum and social feed goes here -->
         </div>
     </section>
-
-    <!--=============== SETTINGS ===============-->
-    <section class="section settings" id="settings" style="padding: 5vw;">
-        <span class="section__subtitle">Settings</span>
-        <h2 class="section__title">App Settings</h2>
-        <div class="settings__container container grid" style="padding: 5vw;">
-            <!-- App settings and user preferences go here -->
-        </div>
-    </section>
-</main>
 
 
    <!-- Additional scripts -->
@@ -345,6 +330,40 @@ function closePopup(){
         }
     });
 </script>
+  <!--=============== FOOTER ===============-->
+  <footer class="footer">
+    <div class="footer__container container">
+        <h1 class="footer__title">FootSteps</h1>
+
+        <ul class="footer__list">
+            <li>
+                <a href="#home" class="footer__link">About</a>
+            </li>
+            <li>
+                <a href="#events class="footer__link">Events</a>
+            </li>
+            <li>
+                <a href="#contact" class="footer__link">Contact</a>
+            </li>
+        </ul>
+
+        <ul class="footer__social">
+            <a href="https://www.linkedin.com" target="_blank" class="footer__social-link">
+                <i class='bx bxl-linkedin-square'></i>
+            </a>
+            <a href="https://twitter.com/?lang=en" target="_blank" class="footer__social-link">
+                <i class='bx bxl-twitter' ></i>
+            </a>
+            <a href="https://substack.com" target="_blank" class="footer__social-link">
+                <i class='bx bxs-news' ></i>
+            </a>
+        </ul>
+
+        <span class="footer__copy">
+            &#169; FootSteps. All rigths reserved
+        </span>
+    </div>
+</footer>
 
 <!--=============== SCROLLREVEAL ===============-->
 <script src="assets/js/scrollreveal.min.js"></script>
