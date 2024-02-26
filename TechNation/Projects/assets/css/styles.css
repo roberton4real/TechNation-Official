@@ -455,7 +455,6 @@ Media screen and (max-width: 320px) {
 /* make softer edges on the photo as well as make cards flexible towards the picture*/
 /* Styling for individual venue cards */
 .venues__card {
-  background-color: #333; /* Dark background */
   color: white; /* White text for better visibility */
   padding: 20px; /* Padding for content */
   border-radius: 10px; /* Rounded corners */
@@ -468,7 +467,9 @@ Media screen and (max-width: 320px) {
   width: 90%; /* Set card width to 90% of its container */
   max-width: 400px; /* Set maximum width for larger screens */
 }
-
+.venues__card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adding box shadow on hover */
+}
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
   .venues__card {
@@ -782,4 +783,26 @@ Media screen and (max-width: 320px) {
     border-radius: .5rem;
   }
 
+.booking {
+  position: relative;
+  width: 1200px; /* Adjust as needed */
+  height: 1000px;
+  margin : 0;
+  left: 0;  
+  overflow: hidden;
+}
+.booking-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: orange; /* Button background color */
+  color: #fff; /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
    
