@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title> FootSteps - TechNation </title>
+</head>
+<body>
+
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <a href="#home" class="nav__logo">
+            <img src="./assets/img/Footsteps-logos.png" alt="FootSteps">
+        </a>
+        <nav class="nav container">
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <div class="nav__icon-container">
+                                <i class='bx bx-home'></i> <!-- Home Icon -->
+                            </div>
+                            <!--Home-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#search" class="nav__link">
+                            <div class="nav__icon-container">
+                                <i class="nav__icon bx bx-search"></i>
+                            </div>
+                            <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+                            <script>
+                              var typingEffect = new Typed(".multiText", {
+                                strings : ["Junior Software Engineer", "DevOps Engineer", "Cloud Engineer", "Cloud Security Engineer"], 
+                                loop : true, 
+                                typeSpeed : 100,
+                                backSpeed : 80, 
+                                backDelay : 1500,
+                              });
+                            </script>
+                            <!--Search-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#events" class="nav__link">
+                            <div class="nav__icon-container">
+                                <i class="nav__icon bx bx-calendar-event"></i>
+                            </div>
+                            <!--Events-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#venues" class="nav__link">
+                            <div class="nav__icon-container">
+                                <i class="nav__icon bx bx-buildings"></i>
+                            </div>
+                            <!--Venues-->
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#profile" class="nav__link">
+                            <div class="nav__icon-container">
+                                <i class="nav__icon bx bx-user"></i>
+                            </div>
+                            <!--My Profile-->
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#community" class="nav__link">
+                            <div class="nav__icon-container">
+                                <i class="nav__icon bx bx-chat"></i>
+                            </div>
+                            <!--Community-->
+                        </a>
+                    </li>
+                    
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+               <!-- Theme change button -->
+<i class='bx bx-moon change-theme' id="theme-button" style="text-align:center"></i>
+</nav>
+</header>
+<script>
+    const themeButton = document.getElementById('theme-button');
+
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
+        const isDarkMode = document.body.classList.contains('dark-theme');
+        if (isDarkMode) {
+            themeButton.classList.remove('bx-sun'); // Remove sun icon
+            themeButton.classList.add('bx-moon'); // Add moon icon
+        } else {
+            themeButton.classList.remove('bx-moon'); // Remove moon icon
+            themeButton.classList.add('bx-sun'); // Add sun icon
+        }
+    });
+
+    // Check for initial theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            document.body.classList.add('dark-theme');
+            themeButton.classList.remove('bx-moon');
+            themeButton.classList.add('bx-sun');
+        }
+    });
+</script>
+
+            
+
+
+    <!--=============== HOME ===============-->
+    <section class="section home" id="home">
+        <main class="main">
+    <!--=============== SLIDER ===============-->
+    <div class="booking">
+        <div id="slider">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1549831838-0a396da91847?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1571158874937-beaf4f24a7cc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1499720843949-d9e6f318dca0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            </figure>
+            <button class="booking-button">BOOK YOUR VENUE NOW</button>
+            
+            
+        </div>
+    </div>
+</main>
+<section class="section about" id="about">
+    <h2 class="section__title">Our Story</h2>
+    <div class="about__container container grid" id="aboutContainer">
+        <div class="about__card">
+            <div class="about__content">
+                <p class="about__description">
+                    John, Giselle, and Rayyan collaborated to create Footsteps, a mobile application designed to connect Canadian creatives with offline platforms for social impact. They identified a lack of artistic platforms in major Canadian cities and a decrease in civic engagement as significant issues. Their solution involves redefining what an art venue can be, allowing any establishment to become a hub for artists and active citizens. Users can set up profiles, and venues can mark themselves as available for artists to use. The app matches users based on shared social issues, fostering offline interactions that contribute to societal change. Future plans include integrating news features and augmented reality to further enhance user engagement. Unlike traditional data usage, Footsteps aims to use user data to bring people together and improve arts, society, and politics.
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function openMissionStatement() {
+    document.getElementById("missionStatementModal").style.display = "block";
+    document.body.classList.add("blur");
+}
+
+function closeMissionStatement() {
+    document.getElementById("missionStatementModal").style.display = "none";
+    document.body.classList.remove("blur");
+}
+</script>
+ 
+    <!--=============== VENUES ===============-->
+    <section class="section venues" id="venues" style="padding: 0px;">
+        <h2 class="section__title">Explore Venues</h2>
+    
+            <div class="venues__filters">
+                <span class="venues__item active-venue" data-filter='all' onclick="filterCards('all', this)">All</span>
+                <span class="venues__item" data-filter='.web' onclick="filterCards('web', this)">Live</span>
+                <span class="venues__item" data-filter='.movil' onclick="filterCards('movil', this)">Outdoor</span>
+                <span class="venues__item" data-filter='.design' onclick="filterCards('design', this)">Art</span>
+            </div>
+            <section style="padding: 0px;"></section>
+            <div class="venues__container container grid" >
+                 <div class="venues__container">
+                <!-- Venue exploration and listing goes here -->
+                <div class="venues__card web"> <!-- Added class 'web' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Live Music Concert" class="venue__img">
+                    <h3 class="venue__title">Trivia Night</h3>
+                    <p class="venue__description">Teams tackle social issues and performance art questions in a competitive setting.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Get Tickets</a>
+                </div>
+                <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art Exhibition" class="venue__img">
+                    <h3 class="venue__title">Art Exhibition</h3>
+                    <p class="venue__description">A showcase of diverse artworks from various artists.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">View Artists</a>
+                </div>
+                <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art Exhibition" class="venue__img">
+                    <h3 class="venue__title">Book Club</h3>
+                    <p class="venue__description">A gathering where members discuss and share thoughts on selected books.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">View Artists</a>
+                </div>
+                <div class="venues__card movil"> <!-- Added class 'movil' to identify this card -->
+                    <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Outdoor Festival" class="venue__img">
+                    <h3 class="venue__title">Outdoor Festival</h3>
+                    <p class="venue__description">Experience the excitement of our outdoor 
+                        festival with food, drinks, and live entertainment.</p>
+                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Learn More</a>
+                </div>
+             
+                
+                </div>
+        </div>
+    </section>
+        
+    </section>
+    
+   
+<script>
+    function filterCards(category, button) {
+        var cards = document.querySelectorAll('.venues__card');
+        cards.forEach(function(card) {
+            if (category === 'all') {
+                card.style.display = 'block';
+            } else {
+                if (card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
+
+        // Update active class for buttons
+        var filterItems = document.querySelectorAll('.venues__item');
+        filterItems.forEach(function(item) {
+            if (item.getAttribute('data-filter') === category) {
+                item.classList.add('active-venue');
+            } else {
+                item.classList.remove('active-venue');
+            }
+        });
+
+        // Toggle active class for the clicked button only
+        var buttons = document.querySelectorAll('.venues__item');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active-venue');
+        });
+        button.classList.add('active-venue');
+    }
+</script>
+
+
+    <!--=============== MY PROFILE ===============-->
+    <section class="section profile" id="profile">
+        <span class="section__subtitle"></span>
+        <h2 class="section__title"></h2>
+        <div class="profile__container container grid" style="padding: 5vw;">
+            <!-- User profile management goes here -->
+             <!--=============== TESTIMONIALS ===============-->
+             <section class="testimonial section">
+                <h2 class="section__title">Artist Profile</h2>
+
+                <div class="testimonial__container container swiper">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/giselle.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">Giselle Almario</h3>
+                            <p class="testimonial__description">
+                                Engaged in advocacy for marginalized communities and dedicated to fostering inclusivity and diversity through performative arts. Truly commendable work!
+            </p>
+                            </p>
+                        </div>
+
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/newjohn.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">New John Refuse</h3>
+                            <p class="testimonial__description">
+                                Expert in community activism and passionate about leveraging the power of the arts to drive social change. An invaluable asset to any cause!
+                            </p>
+                        </div>
+
+                        <div class="testimonial__card swiper-slide">
+                            <img src="assets/img/Rayyan.jpeg" alt="" class="testimonial__img">
+
+                            <h3 class="testimonial__name">Rayyan Dabbous</h3>
+                            <p class="testimonial__description">
+                                Passionate advocate for social justice, specializing in civil rights law and dedicated to advancing causes like Roe v. Wade. A true inspiration!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+<!--=============== COMMUNITY ===============-->
+<section class="section community" id="community">
+    <div class="container">
+        <h2 class="section__title">Join Our Newsletter</h2>
+        <div class="newsletter-container">
+            <a href="https://substack.com/home" target="_blank" rel="noopener noreferrer" class="newsletter-card">
+                <div class="newsletter-image"></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+   <!-- Additional scripts -->
+   <script>
+    const themeButton = document.getElementById('theme-button');
+
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme'); // Toggle dark-theme class on body
+        const isDarkMode = document.body.classList.contains('dark-theme');
+        if (isDarkMode) {
+            themeButton.classList.remove('bx-moon'); // Remove moon icon
+            themeButton.classList.add('bx-sun'); // Add sun icon
+        } else {
+            themeButton.classList.remove('bx-sun'); // Remove sun icon
+            themeButton.classList.add('bx-moon'); // Add moon icon
+        }
+    });
+
+    // Check for initial theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+            document.body.classList.add('dark-theme');
+            themeButton.classList.remove('bx-moon');
+            themeButton.classList.add('bx-sun');
+        }
+    });
+</script>
+  <!--=============== FOOTER ===============-->
+  <footer class="footer">
+    <div class="footer__container container">
+        <h1 class="footer__title">FootSteps</h1>
+
+        <ul class="footer__list">
+            <li>
+                <a href="#home" class="footer__link">About</a>
+            </li>
+            <li>
+                <a href="#events class="footer__link">Events</a>
+            </li>
+            <li>
+                <a href="#contact" class="footer__link">Contact</a>
+            </li>
+        </ul>
+
+        <ul class="footer__social">
+            <a href="https://www.linkedin.com" target="_blank" class="footer__social-link">
+                <i class='bx bxl-linkedin-square'></i>
+            </a>
+            <a href="https://twitter.com/?lang=en" target="_blank" class="footer__social-link">
+                <i class='bx bxl-twitter' ></i>
+            </a>
+            <a href="https://substack.com" target="_blank" class="footer__social-link">
+                <i class='bx bxs-news' ></i>
+            </a>
+        </ul>
+
+        <span class="footer__copy">
+            &#169; FootSteps. All rigths reserved
+        </span>
+    </div>
+</footer>
+
+<!--=============== SCROLLREVEAL ===============-->
+<script src="assets/js/scrollreveal.min.js"></script>
+
+<!--=============== SWIPER JS ===============-->
+<script src="assets/js/swiper-bundle.min.js"></script>
+
+<!--=============== MIXITUP FILTER ===============-->
+<script src="assets/js/mixitup.min.js"></script>
+
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
