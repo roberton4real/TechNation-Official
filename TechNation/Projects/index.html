@@ -20,14 +20,24 @@
 </head>
 <body>
   <div class="container2">
-    <button type = "submit" class = "btn"> Back to home </button>
-    <div class="popup">
-      <img src="https://png.pngtree.com/png-vector/20190909/ourmid/pngtree-red-heart-icon-isolated-png-image_1726594.jpg">
+    <button type = "submit" class = "btn" onclick="openPopup()"> Back to home </button>
+    <div class="popup" id ="popup">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Red-simple-heart-icon-transparent-background.png">
       <h2>Coming Soon!</h2>
       <p> We appreciate your support.</p>
-      <button type="button">Back to home</button>
+      <button type="button" onclick="closePopup()">Back to home page</button>
     </div>
   </div>
+<script>
+let popup = document.getElementById("popup");
+
+function openPopup(){
+  popup.classList.add("open-popup");
+}
+function closePopup(){
+  popup.classList.remove("open-popup");
+}
+</script>
     <!--=============== HEADER ===============-->
     <header class="header">
         <a href="#home" class="nav__logo">
@@ -204,7 +214,7 @@
                     <h3 class="venue__title">Live Music Concert</h3>
                     <p class="venue__description">Join us for an unforgettable night of live 
                          music featuring renowned artists from around the world.</p>
-                    <a href="" class="venue__button" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Get Tickets</a>
+                    <button type="submit" class="venue__button" onclick="openPopup()" style="padding: 5px 10px; background-color: orange; color: #fff; width: 120px; display: block; margin: 0 auto;">Get Tickets</button>
                 </div>
                 <div class="venues__card design"> <!-- Added class 'design' to identify this card -->
                     <img src="https://images.unsplash.com/photo-1468359601543-843bfaef291a?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art Exhibition" class="venue__img">
