@@ -912,3 +912,7 @@ Media screen and (max-width: 320px) {
 .newsletter-card:hover {
   transform: scale(1.05);
 }
+
+.newsletter-container {
+  padding-bottom: 30px;
+}
